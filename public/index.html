@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="max-w-4xl px-8 md:px-0 mx-auto">
+      <div class="mx-auto mb-4 mt-10">
+        <h1 class="font-bold text-xl ml-2">webm2xtwitter</h1>
+        <p class="text-xs">
+          ℹ️ The video is never uploaded to any server. Everything (including the video conversion) is done in the browser.
+        </p>
+      </div>
+      <div
+        id="drop-area"
+        class="relative border-2 border-gray-300 border-dashed rounded-xl p-6 mx-auto mb-10"
+      >
+        <input
+          type="file"
+          accept=".webm"
+          class="absolute inset-0 w-full h-full opacity-0 z-50 cursor-pointer"
+        />
+        <div class="text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12 mx-auto opacity-50"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+            />
+          </svg>
+          <h3 class="mt-2 font-medium">
+            <label for="file-upload" class="relative">
+              <span class="text-xl text-gray-800 font-semibold"
+                >Drag and drop a video file here</span
+              >
+              <br />
+              <small class="mb-2 text-gray-400">File supported: .webm</small>
+              <input
+                id="file-upload"
+                name="file-upload"
+                type="file"
+                class="sr-only"
+              />
+              <br />
+              <button
+                class="px-6 py-3 bg-blue-500 hover:bg-blue-800 rounded text-base font-medium mt-4 text-white"
+              >
+                Choose File
+              </button>
+              <br />
+            </label>
+          </h3>
+        </div>
+      </div>
+      <div
+        id="results"
+        class="invisible flex flex-row items-center space-x-2 border-2 border-gray-300 rounded-xl p-6 mx-auto mb-10 h-64"
+      >
+        <div class="flex flex-col items-center">
+          <video id="input-video" controls class="max-w-48"></video>
+          <button
+            id="convert-button"
+            class="h-16 px-6 py-3 bg-orange-500 hover:bg-orange-800 rounded text-base font-medium mt-4 text-white disabled:opacity-25"
+          >
+            Convert
+          </button>
+        </div>
+
+        <div class="flex flex-col grow items-center">
+          <pre
+            id="progress-logs"
+            class="overflow-auto text-xs font-medium text-gray-800 max-w-md h-48 max-h-48"
+          ></pre>
+          <div class="w-full max-h-4 bg-gray-200 rounded-full dark:bg-gray-500">
+            <div
+              id="progress-bar"
+              class="bg-blue-500 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full"
+              style="width: 0%"
+              ;
+            ></div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
+          <video id="output-video" controls class="max-w-48"></video>
+          <button
+            id="download-button"
+            disabled
+            class="h-16 px-6 py-3 bg-green-500 hover:bg-green-800 rounded text-base font-medium mt-4 text-white disabled:opacity-25"
+          >
+            Download
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <canvas id="videoCanvas" style="display: none"></canvas>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

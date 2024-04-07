@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "download": "node download-assets.js",
+    "start": "node server.js",
+    "watch:css": "npx tailwindcss -i input.css -o ./public/output.css --watch"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "serve-index": "^1.9.1",
+    "tailwindcss": "^3.4.3",
+    "tar": "^6.2.1"
+  }
+}
