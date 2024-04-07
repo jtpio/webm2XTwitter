@@ -1,6 +1,6 @@
 # webm2xtwitter
 
-![a screenshot showing the app](https://github.com/jtpio/webm2xtwitter/assets/591645/9c606d96-fd25-4bd2-9803-35bec2e40d3c)
+![a screenshot showing the app](https://github.com/jtpio/webm2XTwitter/assets/591645/944d7a6a-d665-4e54-b957-66bf189729c4)
 
 ## Usage
 
