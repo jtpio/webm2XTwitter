@@ -1,8 +1,10 @@
 {
   "scripts": {
+    "build:css": "npx tailwindcss -i input.css -o ./public/output.css",
+    "build": "npm run download && npm run build:css",
     "download": "node download-assets.js",
     "start": "node server.js",
-    "watch:css": "npx tailwindcss -i input.css -o ./public/output.css --watch"
+    "watch:css": "npm run build:css --watch"
   },
   "devDependencies": {
     "cors": "^2.8.5",
