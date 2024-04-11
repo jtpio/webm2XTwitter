@@ -23,6 +23,7 @@ jobs:
       - name: Build
         shell: bash -l {0}
         run: |
+          npm ci
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
