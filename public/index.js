@@ -1,7 +1,7 @@
 import { FFmpeg } from "./assets/ffmpeg/package/dist/esm/index.js";
 import { fetchFile } from "./assets/util/package/dist/esm/index.js";
 
-const CORE_MT_URL = "/assets/core-mt/package/dist/esm/ffmpeg-core.js";
+const CORE_MT_URL = "./assets/core-mt/package/dist/esm/ffmpeg-core.js";
 
 // TODO: make this configurable?
 const FFMPEG_ARGS = [
@@ -57,8 +57,9 @@ const transcode = async (file) => {
       updateProgress(progress);
       console.log(`${progress * 100} %`);
     });
+    const coreURL = new URL(CORE_MT_URL, window.location.href).href;
     await ffmpeg.load({
-      coreURL: CORE_MT_URL,
+      coreURL,
     });
   }
   const { name } = file;
