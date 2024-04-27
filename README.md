@@ -4,7 +4,11 @@
 
 ## Usage
 
-TBD
+1. Record your WebM video, for example with the built-in GNOME Screen Recorder on Linux
+2. Go to https://jtp.io/webm2XTwitter/
+3. Drop your `.webm` video
+4. Click on `Convert`
+5. Click on `Download` when ready to download the converted video
 
 ## Motivation
 
